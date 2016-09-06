@@ -6,4 +6,4 @@ First, we are implementing a powerlaw parameterization for planet radius and per
 
 8/19/2016 Changing code back to radius/period.  Radius uncertainties now implemented.
 
-8/22/2016 Code has a switch to select period or insolation.
+8/22/2016 Code has a switch to select period or insolation, catalog version, stellar type.  
