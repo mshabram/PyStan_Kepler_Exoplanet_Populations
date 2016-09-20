@@ -7,3 +7,14 @@ First, we are implementing a powerlaw parameterization for planet radius and per
 8/19/2016 Changing code back to radius/period.  Radius uncertainties now implemented.
 
 8/22/2016 Code has a switch to select period or insolation, catalog version, stellar type.  
+
+9/9/2016 Adding asymmetric planet radius uncertainties. 
+
+TO DO:
+- Full posteriors for the planet radii for catalog version 9.2
+- GP bin height parameterization. 
+- Stellar catalog uncertainties (e.g., Teff, Mass, Radius, etc.). 
+- Reliability
+- Multiplicity
+- Interface with catalog 9.3, V1 occurrence rate products (e.g., completeness contours that are built from the 1-sigma depth function and numerical window function). 
+- Explore other analysis models. 
