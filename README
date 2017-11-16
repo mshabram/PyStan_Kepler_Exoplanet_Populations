@@ -1,20 +1,34 @@
-First, we are implementing a powerlaw parameterization for planet radius and period/insolation using the PyStan Nuts (the “No-U-Turn Sampler”) which optimizes HMC adaptively, in order to calculate occurrence rates based off of work by Chris Burke and the open science blog post by Dan Foreman-Mackey: The original exopop.ipynb from Dan Foreman-Mackey, is found at http://dan.iel.fm/downloads/notebooks/exopop.ipynb, and the accompanying blog post is at http://dan.iel.fm/posts/exopop/. Joe Catanzarite is co-investigator on this project and shares responsibility for the code development.
+First, we are implementng a powerlaw parameterization for planet radius and perido/insolation using Stan (software for Bayesian statistical inference with MCMC sampling (NUTS, HMC) http://mc-stan.org/), in order to calculate occurrence rates based off of work by Chris Burke and the open science blog post by Dan Foreman-Mackey: The 
+original exopop.ipynb from Dan Foreman-Mackey, is found at http://dan.iel.fm/downloads/notebooks/exopop.ipynb, 
+and the accompanying blog post is at http://dan.iel.fm/posts/exopop/ where he reproduces the work done by Chris Burke in a Python Jupyter notebook. Some parts of this expanded notebook were developed at the exoplanet population hackathon by Ravi and Joe Catanzarite. Joe Catanzarite is co-investigator on this project and shares responsibility for the code development.
 
-8/15/2016 This PyStan model version uses pre-computed completeness as input, for testing and development.
+8/15/2016
+This PyStan model version uses pre-computed completeness as input, for testing and developement.  
 
-8/18/2016 We now have a working version of the power law occurrence rate model using PyStan that agrees with the results from the Burke calculations and the DFM python notebook blog post implementation. Now we will add radius uncertainties into the completeness calculations.
+8/18/2016
+We now have a working version of the power law occurrence rate model using PyStan that agrees with the results from the Burke calculations and the DFM python notebook blog post implementation. Now we will add radius uncertanties into the completeness calculations.
 
-8/19/2016 Changing code back to radius/period.  Radius uncertainties now implemented.
+8/19/2016
+Changing code back to radius/period and adding radius uncertainties.  
 
 8/22/2016 Code has a switch to select period or insolation, catalog version, stellar type.  
 
-9/9/2016 Adding asymmetric planet radius uncertainties. 
+8/28/2016
+Running current model (PyStan powerlaw analysis model with radius uncertainties) on similar parameter space to DFM GP occurrence rate project/paper.  0.75 to 2.5 Rearth Radii, 20-320 day Period (ignores high false alarm prob at large period), G stars (5300K to 6000K), 9.1 catalog,  duty cycle cut at >0.5, and dutycycle times dataspan at > 2 years (minimum data coverage of 2 years, stellar mass in finite. No log g cuts at this time.  
+
+9/9/2016 Working on adding asymmetric planet radius uncertainties. 
+
+11/13/2017
+Megan Shabram picking back up this online, and resuming this project's github track. Issues with the probabilistic Stan Model have been corrected.  There was a bug where the true radius and observed radius were switched.  The code now needs to be run for enough iterations to show signs of convergence. I am deciding to hold off on working with planet insolation because the dependence on the semi-major axis is an issue (Need more information about stellar multiplicity from hosts and nonb-hosts). 
+
+11/16/2017
+Did two runs 10,000, and next tried 30,000 iterations but still signs of having not converged persist.  It does look like it is on track.  Results in part 2 below have HMC diagnostics and have not converged.
 
 TO DO:
-- Full posteriors for the planet radii for catalog version 9.2
+- Full posteriors for the planet radii (e.g., how to model the uncertainty in planet radius).
 - GP bin height parameterization. 
 - Stellar catalog uncertainties (e.g., Teff, Mass, Radius, etc.). 
 - Reliability
 - Multiplicity
 - Interface with catalog 9.3, V1 occurrence rate products (e.g., completeness contours that are built from the 1-sigma depth function and numerical window function). 
-- Explore other analysis models. 
+- Explore other analysis models.
