@@ -19,10 +19,13 @@ Running current model (PyStan powerlaw analysis model with radius uncertainties)
 9/9/2016 Working on adding asymmetric planet radius uncertainties. 
 
 11/13/2017
-Megan Shabram picking back up this online, and resuming this project's github track. Issues with the probabilistic Stan Model have been corrected.  There was a bug where the true radius and observed radius were switched.  The code now needs to be run for enough iterations to show signs of convergence. I am deciding to hold off on working with planet insolation because the dependence on the semi-major axis is an issue (Need more information about stellar multiplicity from hosts and nonb-hosts). 
+Megan Shabram picking back up this online, and resuming this project's github track. Issues with the probabilistic Stan Model have been corrected.  There was a bug where the true radius and observed radius were switched.  The code now needs to be run for enough iterations to show signs of convergence. I am deciding to hold off on working with planet insolation because the dependence on the semi-major axis is an issue (Need more information about stellar multiplicity from hosts and non-hosts). 
 
 11/16/2017
 Did two runs 10,000, and next tried 30,000 iterations but still signs of having not converged persist.  It does look like it is on track.  Results in part 2 below have HMC diagnostics and have not converged.
+
+5/10/18 Picked this back up again after advances in software, updating software and exploring numerical stability of these kinds of models. Was able to get a working version that includes the real planet radius uncertainties in a reasonable amount of time. Hurray!
+
 
 TO DO:
 - Full posteriors for the planet radii (e.g., how to model the uncertainty in planet radius).
