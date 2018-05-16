@@ -1,6 +1,8 @@
-First, we are implementng a powerlaw parameterization for planet radius and perido/insolation using Stan (software for Bayesian statistical inference with MCMC sampling (NUTS, HMC) http://mc-stan.org/), in order to calculate occurrence rates based off of work by Chris Burke and the open science blog post by Dan Foreman-Mackey: The 
+GOAL: Include planet radius measurement uncertainty in the inhomogeneous Poisson point processes occurrence rate model using hierarchical Bayesian modeling and a Hamiltonian Monte Carlo sampler.    
+
+First, we implemented a powerlaw parameterization for planet radius and period/insolation using Stan (software for Bayesian statistical inference with MCMC sampling (NUTS, HMC) http://mc-stan.org/), in order to calculate occurrence rates based off of work by Chris Burke and the open science blog post by Dan Foreman-Mackey: The 
 original exopop.ipynb from Dan Foreman-Mackey, is found at http://dan.iel.fm/downloads/notebooks/exopop.ipynb, 
-and the accompanying blog post is at http://dan.iel.fm/posts/exopop/ where he reproduces the work done by Chris Burke in a Python Jupyter notebook. Some parts of this expanded notebook were developed at the exoplanet population hackathon by Ravi and Joe Catanzarite. Joe Catanzarite is co-investigator on this project and shares responsibility for the code development.
+and the accompanying blog post is at http://dan.iel.fm/posts/exopop/ where he reproduces the work done by Chris Burke in a Python Jupyter notebook. Some parts of this expanded notebook were developed at the exoplanet population hackathon by Ravi and Joe Catanzarite. Joe Catanzarite shares responsibility for the code development in 2016.
 
 8/15/2016
 This PyStan model version uses pre-computed completeness as input, for testing and developement.  
